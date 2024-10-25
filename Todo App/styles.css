@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background: #1f1f2e;
+    --card-bg: #29293d;
+    --button-bg: #4a4a66;
+    --highlight: #828dff;
+    --text: #ffffff;
+    --low-priority: #77dd77;
+    --medium-priority: #ffb347;
+    --high-priority: #ff6961;
+}
+
+body {
+    background-color: var(--background);
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px; /* Extra padding for overall breathing room */
+}
+
+.container {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px; /* Padding around the whole container for inner spacing */
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: var(--highlight);
+    margin-bottom: 15px; /* Space out the header from the form */
+}
+
+#taskForm {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px; /* Space the form below the main title */
+    padding: 10px 0; /* Vertical padding around the form for spacing */
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px;
+    margin: 0; /* Reset any inherited margin */
+    background: var(--background);
+    border-radius: 5px;
+    color: var(--text);
+    outline: none;
+}
+
+#prioritySelect {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+button {
+    padding: 10px 15px;
+    margin: 0; /* Reset any inherited margin */
+    background-color: var(--button-bg);
+    color: var(--text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--highlight);
+}
+
+h2 {
+    margin-top: 30px; /* Space between task and completed headers */
+    margin-bottom: 10px; /* Space above task list */
+}
+
+#taskList, #completedList {
+    list-style-type: none;
+    margin-top: 10px; /* Space above the lists */
+    padding-left: 0; /* Remove default list padding */
+}
+
+.task-item {
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    padding: 15px; /* Padding inside task items for spacious look */
+    margin-bottom: 10px; /* Margin between each task */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s;
+}
+
+.task-item:hover {
+    transform: scale(1.02);
+}
+
+.task-item p {
+    margin: 0;
+    padding: 0 5px; /* Padding around text within task items */
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.priority {
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-left: 10px; /* Space between task text and priority */
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.low {
+    background-color: var(--low-priority);
+}
+
+.medium {
+    background-color: var(--medium-priority);
+}
+
+.high {
+    background-color: var(--high-priority);
+}
+
+.task-item button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--highlight);
+    font-size: 1.2rem;
+    margin: 0 5px; /* Space between each button */
+    transition: color 0.2s;
+}
+
+.task-item button:hover {
+    color: var(--text);
+}
